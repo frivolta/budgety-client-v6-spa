@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { PrimaryButton } from '@fluentui/react'
+import { compose } from 'ramda'
+import React from 'react'
+import { withAuth } from './hoc/withAuth'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+    return (
+        <div className="fl-grid">
+            <div className="fl-span6c">
+                <PrimaryButton>Button</PrimaryButton>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default compose(withAuth)(App)
